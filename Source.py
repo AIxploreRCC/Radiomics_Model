@@ -18,7 +18,7 @@ st.title("Prédiction de Survie avec le Modèle de Cox")
 # Entrées pour les variables du modèle
 hb = st.slider("Hemoglobin Level", min_value=0.0, max_value=20.0, value=10.0, step=0.1)
 kn564 = st.selectbox("KN564 Presence", options=[0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
-rad_score = st.slider("RAD Score", min_value=0.0, max_value=1, value=0.5, step=0.1)
+rad_score = st.slider("RAD Score", min_value=0.0, max_value=10, value=0.5, step=0.1)
 
 input_df = pd.DataFrame({
     'Hb': [hb],
