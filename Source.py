@@ -30,9 +30,9 @@ if st.button('Prédire la survie'):
     })
 
     # Prédiction de survie
-    survival_prob = model_cox.predict(input_df)
+    survival_function = model_cox.predict_survival_function(input_df)
     st.subheader('Probabilité de survie estimée:')
-    st.write(survival_prob[0])
+    st.write(survival_function[0])
 
 
 # Prédire la fonction de survie
