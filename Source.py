@@ -21,7 +21,7 @@ st.title("Survival Prediction with the Cox Model")
 
 # Entrées pour les variables du modèle
 hb = st.slider("Hemoglobin Level", min_value=0.0, max_value=20.0, value=10.0, step=0.1)
-kn564 = st.selectbox("KEYNOTE-564 inclusion criteria", options=[0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
+kn564 = st.selectbox("KEYNOTE-564 inclusion criteria", options=[0, 1], format_func=lambda x: "high risk " if x == 1 else "intermediate-high")
 rad_score = st.slider("Radiomics Signature", min_value=0.0, max_value=1.0, value=0.5, step=0.1)
 
 input_df = pd.DataFrame({
