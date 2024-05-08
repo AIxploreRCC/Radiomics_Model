@@ -17,8 +17,6 @@ model_cox = load_model()
 # Title of the Streamlit application
 st.title("Survival Prediction with the Cox Model")
 
-# Slider for 'Duration' limited to 60 months
-duration = st.slider("Duration in Months", min_value=0, max_value=60, value=30, step=1)
 
 
 # Entrées pour les variables du modèle
