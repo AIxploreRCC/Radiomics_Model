@@ -18,7 +18,7 @@ st.title("Prédiction de Survie avec le Modèle de Cox")
 # Entrées pour les variables du modèle
 hb = st.slider("Hemoglobin Level", min_value=0.0, max_value=20.0, value=10.0, step=0.1)
 kn564 = st.selectbox("KN564 Presence", options=[0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
-rad_score = st.slider("RAD Score", min_value=0.0, max_value=10.0, value=5.0, step=0.1)
+rad_score = st.slider("RAD Score", min_value=0.0, max_value=1, value=0.5, step=0.01)
 
 input_df = pd.DataFrame({
     'Hb': [hb],
@@ -28,22 +28,19 @@ input_df = pd.DataFrame({
 
 # Bouton pour prédire la survie
 if st.button('Prédire la survie'):
-    # Prédiction de survie
     survival_function = model_cox.predict_survival_function(input_df)
     st.subheader('Probabilité de survie estimée:')
-    st.write(survival_function.iloc[:, 0])  # Affiche la première colonne de la fonction de survie
+    st.line_chart(survival_function)
 
 # Bouton pour afficher la fonction de survie
 if st.button("Afficher la fonction de survie"):
-    pred_surv = model_cox.predict_survival_function(input_df, return_array=True)
+    pred_surv = model_cox.predict_survival_function(input_df)
     fig, ax = plt.subplots()
-    for i, s in enumerate(pred_surv):
-        plt.step(model_cox.event_times_, s, where="post", label=f'ID {i}')
-    plt.ylabel("Probabilité de survie")
-    plt.xlabel("Temps en jours")
-    plt.legend()
-    plt.grid(True)
+    pred_surv.plot(ax=ax)  # Utilisez DataFrame.plot pour un affichage correct
+    ax.set_ylabel("Probabilité de survie")
+    ax.set_xlabel("Temps en jours")
     st.pyplot(fig)
+
 
 
 
