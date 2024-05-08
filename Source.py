@@ -13,7 +13,13 @@ def load_model():
 
 model_cox = load_model()
 
-st.title("Prédiction de Survie avec le Modèle de Cox")
+
+# Title of the Streamlit application
+st.title("Survival Prediction with the Cox Model")
+
+# Slider for 'Duration' limited to 60 months
+duration = st.slider("Duration in Months", min_value=0, max_value=60, value=30, step=1)
+
 
 # Entrées pour les variables du modèle
 hb = st.slider("Hemoglobin Level", min_value=0.0, max_value=20.0, value=10.0, step=0.1)
