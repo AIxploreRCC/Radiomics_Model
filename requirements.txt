@@ -1,10 +1,10 @@
-streamlit
 numpy
 pandas
 matplotlib
 dill
 nibabel
 SimpleITK
-pyradiomics
 scikit-learn
 joblib
+pyradiomics
+streamlit
