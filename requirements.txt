@@ -14,5 +14,4 @@ scikit-image
 trimesh
 scikit-learn
 joblib
-pyradiomics
 streamlit
