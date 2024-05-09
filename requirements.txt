@@ -6,6 +6,6 @@ dill
 lifelines
 nibabel
 SimpleITK
-PyRadiomics
-sklearn.preprocessing
+Radiomics
+sklearn
 joblib
