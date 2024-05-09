@@ -50,7 +50,7 @@ if st.button('Predict Survival'):
         st.error(f"Prediction failed: {e}")
 
 # Section pour le calcul du RAD
-st.title('RAD Calculation with CT and Segmentation')
+st.title('Radiomics Signature Calculation with CT and Segmentation')
 
 # Chargement des fichiers TDM et de segmentation via l'interface utilisateur
 uploaded_tdm = st.file_uploader("Choose a CT file (.nii)", type=["nii", "nii.gz"])
