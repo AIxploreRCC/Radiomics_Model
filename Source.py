@@ -50,31 +50,6 @@ if st.button('Predict Survival'):
         st.error(f"Prediction failed: {e}")
 
 # Section pour le calcul du RAD
-st.title('Radiomics Signature Calculation with CT and Segmentation')
-
-# Chargement des fichiers TDM et de segmentation via l'interface utilisateur
-uploaded_tdm = st.file_uploader("Choose a CT file (.nii)", type=["nii", "nii.gz"])
-uploaded_seg = st.file_uploader("Choose a Segmentation file (.nii)", type=["nii", "nii.gz"])
-
-# Bouton pour calculer le RAD après le chargement des fichiers
-if st.button('Calculate RAD'):
-    if uploaded_tdm is not None and uploaded_seg is not None:
-        # Charger les données NIfTI
-        tdm_data = load_nifti_file(uploaded_tdm)
-        seg_data = load_nifti_file(uploaded_seg)
-
-        if tdm_data is not None and seg_data is not None:
-            # Ici, vous pouvez ajouter votre logique de calcul du RAD
-            # Par exemple :
-            # rad_score = calculate_rad(tdm_data, seg_data)
-            # st.write(f'The RAD score is: {rad_score}')
-
-            # Placeholder pour la fonction de calcul du RAD
-            st.write("CT and Segmentation data loaded. Ready to calculate RAD.")
-    else:
-        st.error("Please upload both CT and Segmentation files.")
-
-
 
 
 FEATURE_KEYS = ['original_glcm_JointEnergy',
