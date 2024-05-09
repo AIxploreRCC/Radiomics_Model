@@ -122,6 +122,11 @@ st.title("Radiomics Feature Extraction and RSF Prediction")
 uploaded_ct = st.file_uploader("Upload CT Image", type=["nii", "nii.gz"])
 uploaded_seg = st.file_uploader("Upload Segmentation Mask", type=["nii", "nii.gz"])
 
+@st.cache(allow_output_mutation=True, suppress_st_warning=True)
+def load_rsf_model():
+    return joblib.load("random_survival_forest_model.joblib")
+
+
 model_rsf = load_rsf_model()
 extractor = setup_extractor()
 
