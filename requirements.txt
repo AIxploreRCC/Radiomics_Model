@@ -9,8 +9,6 @@ pykwalify
 docopt
 six
 python-dateutil
-ruamel.yaml-0.18.6
-ruamel.yaml.clib-0.2.8
 scikit-learn
 joblib
 pyradiomics-3.0.1
