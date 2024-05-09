@@ -8,9 +8,14 @@ import nibabel as nib
 # Fonction pour charger le modèle sauvegardé
 @st.cache(allow_output_mutation=True)
 def load_model():
-    with open('model_cox.pkl', 'rb') as f:
-        model = dill.load(f)
-    return model
+    try:
+        with open('model_cox.pkl', 'rb') as f:
+            model = dill.load(f)
+        return model
+    except Exception as e:
+        st.error(f"Failed to load model: {e}")
+        return None
+
 
 # Fonction pour charger des fichiers NIfTI
 @st.cache(show_spinner=True)
