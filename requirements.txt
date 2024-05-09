@@ -6,5 +6,5 @@ nibabel
 SimpleITK
 scikit-learn
 joblib
-pyradiomics
+radiomics
 streamlit
