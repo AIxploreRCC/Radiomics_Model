@@ -4,6 +4,7 @@ matplotlib
 dill
 nibabel
 SimpleITK
+PyWavelets
 scikit-learn
 joblib
 pyradiomics
