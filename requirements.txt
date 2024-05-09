@@ -9,6 +9,9 @@ pykwalify
 docopt
 six
 python-dateutil
+scipy
+scikit-image
+trimesh
 scikit-learn
 joblib
 pyradiomics-3.0.1
