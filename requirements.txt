@@ -5,3 +5,8 @@ matplotlib
 dill
 lifelines
 nibabel
+SimpleITK
+os
+PyRadiomics
+sklearn.preprocessing
+joblib
