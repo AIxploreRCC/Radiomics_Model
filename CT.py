@@ -4,7 +4,7 @@ import numpy as np
 import dill
 import nibabel as nib
 import SimpleITK as sitk
-from pyradiomics import featureextractor
+from radiomics import featureextractor
 import joblib
 
 
