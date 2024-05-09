@@ -106,8 +106,11 @@ import numpy as np
 
 # Charger le modèle RSF
 @st.cache(allow_output_mutation=True)
-def load_rsf_model():
-    return joblib.load("random_survival_forest_model.joblib")
+def load_model2():
+    with open('random_survival_forest_model.dill', 'rb') as f:
+        model2 = dill.load(f)
+    return model2
+
 
 # Configurer l'extracteur de caractéristiques
 def setup_extractor():
