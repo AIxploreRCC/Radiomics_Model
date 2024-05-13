@@ -7,7 +7,7 @@ import nibabel as nib
 
 # Decorator to cache model loading
 @st.cache(allow_output_mutation=True)
-import dill
+
 
 def load_model_direct():
     with open('model_cox.pkl', 'rb') as f:
