@@ -15,10 +15,4 @@ pqdm>=0.2.0
 Boruta==0.3
 xgboost==1.6.0
 imbalanced-learn==0.9.1
-optuna==2.10.0
-plotly==5.5
-shap==0.41
-scikit-image==0.19
-pydicom-seg==0.4.1
-ipython==8.10.0
-rich==13.3.1
+joblib
