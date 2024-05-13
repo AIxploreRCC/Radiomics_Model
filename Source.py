@@ -7,13 +7,15 @@ import nibabel as nib
 
 # Decorator to cache model loading
 @st.cache(allow_output_mutation=True)
-def load_model():
+import dill
+
+def load_model_direct():
     with open('model_cox.pkl', 'rb') as f:
         model = dill.load(f)
     return model
 
-# Load the Cox model
-model_cox = load_model()
+# Call the function directly
+model_cox = load_model_direct()
 
 # Title of the Streamlit app
 st.title("Survival Prediction with the Cox Model")
