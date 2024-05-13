@@ -1,6 +1,5 @@
 numpy
 streamlit
-pyradiomics==3.0.1
 scikit-learn==1.2.0
 SimpleITK==2.1.1.2
 pandas==1.4.2
