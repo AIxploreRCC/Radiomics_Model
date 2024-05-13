@@ -4,6 +4,7 @@ import dill
 import numpy as np
 import matplotlib.pyplot as plt
 import nibabel as nib
+from joblib import load
 
 
 # Chargement du modèle
