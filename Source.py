@@ -5,28 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import nibabel as nib
 
-# Fonction pour charger le modèle sauvegardé
-@st.cache(allow_output_mutation=True)
-def load_model():
-    try:
-        with open('model_cox.pkl', 'rb') as f:
-            model = dill.load(f)
-        return model
-    except Exception as e:
-        st.error(f"Failed to load model: {e}")
-        return None
-
-
-# Fonction pour charger des fichiers NIfTI
-@st.cache(show_spinner=True)
-def load_nifti_file(file):
-    try:
-        nifti = nib.load(file)
-        data = nifti.get_fdata()
-        return data
-    except Exception as e:
-        st.error(f"Failed to load NIfTI file: {e}")
-        return None
 
 # Chargement du modèle
 model_cox = load_model()
